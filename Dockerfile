@@ -11,9 +11,9 @@ RUN apt update && apt install -y \
 
 # CI TEST Dependencies
 RUN apt update && apt install -y \
-    python3-pip \
+    python3-pip
 
-RUN pip3 install PyYAML rospkg defusedxml netifaces
+RUN pip3 install --upgrade pip && pip3 install PyYAML rospkg defusedxml netifaces
     
 # BUILD/RUN Dependencies
 RUN apt update && apt install -y \
