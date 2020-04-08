@@ -19,3 +19,9 @@ RUN pip3 install --upgrade pip && pip3 install PyYAML rospkg defusedxml netiface
 RUN apt update && apt install -y \
     libeigen3-dev
     
+# DEV Dependencies
+RUN apt update && apt install -y \
+    tmux \
+    vim \
+    git
+    
