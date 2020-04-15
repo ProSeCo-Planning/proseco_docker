@@ -1,4 +1,4 @@
-FROM karlkurzer/proseco:tf2gpu
+FROM karlkurzer/proseco:tf2-devel-gpu
 
 # setup keys
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
