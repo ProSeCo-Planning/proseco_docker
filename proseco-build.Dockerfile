@@ -1,5 +1,5 @@
 # ROS Base Image
-FROM ros:melodic-ros-base-bionic
+FROM karlkurzer/proseco:ros
 
 # BUILD/RUN Dependencies
 RUN apt update && apt install -y \
