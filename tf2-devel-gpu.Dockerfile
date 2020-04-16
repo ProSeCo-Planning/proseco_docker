@@ -33,7 +33,6 @@ ARG CUDNN_MAJOR_VERSION=7
 ARG LIB_DIR_PREFIX=x86_64
 ARG LIBNVINFER=6.0.1-1
 ARG LIBNVINFER_MAJOR_VERSION=6
-ARG DEBIAN_FRONTEND=noninteractive
 
 # Needed for string substitution
 SHELL ["/bin/bash", "-c"]
@@ -143,47 +142,3 @@ RUN mkdir /bazel && \
     chmod +x /bazel/installer.sh && \
     /bazel/installer.sh && \
     rm -f /bazel/installer.sh
-
-# COPY bashrc /etc/bash.bashrc
-# RUN chmod a+rwx /etc/bash.bashrc
-
-# tensorflow 2.0 installation
-RUN cd ~ && \
-    git clone https://github.com/tensorflow/tensorflow.git && \
-    cd tensorflow && \
-    git checkout r2.0 && \
-    ./configure
-
-# install build dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    autoconf \
-    automake \
-    libtool \
-    cmake
-
-# build the libraries
-RUN cd ~/tensorflow && \ 
-    bazel build //tensorflow:libtensorflow_cc.so && \
-    bazel build //tensorflow:libtensorflow_framework.so
-
-RUN cd ~/tensorflow && ./tensorflow/contrib/makefile/download_dependencies.sh
-
-RUN cd ~/tensorflow/tensorflow/contrib/makefile/downloads/protobuf/ && \
-    ./autogen.sh && \
-    ./configure && \
-    make install
-
-# copy the library and header files to the respective locations
-RUN mkdir -p ~/catkin_ws/lib && \
-    mkdir -p ~/catkin_ws/include && \
-    cp ~/tensorflow/bazel-bin/tensorflow/libtensorflow_cc* ~/catkin_ws/lib && \
-    cp ~/tensorflow/bazel-bin/tensorflow/libtensorflow_framework* ~/catkin_ws/lib && \
-    cp /usr/local/lib/libprotobuf.a ~/catkin_ws/lib && \
-    cp -r ~/tensorflow/bazel-genfiles/* ~/catkin_ws/include && \
-    cp -r ~/tensorflow/tensorflow/cc ~/catkin_ws/include/tensorflow && \
-    cp -r ~/tensorflow/tensorflow/core ~/catkin_ws/include/tensorflow && \
-    cp -r ~/tensorflow/third_party ~/catkin_ws/include && \
-    cp -r /usr/local/include/google ~/catkin_ws/include && \
-    cp -r ~/tensorflow/tensorflow/contrib/makefile/downloads/absl/absl ~/catkin_ws/include && \
-    cp -r ~/tensorflow/bazel-tensorflow/external/eigen_archive/unsupported ~/catkin_ws/include && \
-    cp -r ~/tensorflow/bazel-tensorflow/external/eigen_archive/Eigen ~/catkin_ws/include
