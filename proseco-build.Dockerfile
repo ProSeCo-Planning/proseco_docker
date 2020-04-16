@@ -1,5 +1,5 @@
 # ROS Base Image
-FROM karlkurzer/proseco:ros
+FROM karlkurzer/proseco:tf-gpu-ros
 
 # BUILD/RUN Dependencies
 RUN apt update && apt install -y \
