@@ -33,12 +33,12 @@ RUN mkdir -p ~/catkin_ws/lib && \
 # copy the library and header files to the respective locations
 COPY --from=builder /root/tensorflow/bazel-bin/tensorflow/ ~/catkin_ws/lib/
 COPY --from=builder /usr/local/lib/libprotobuf.a ~/catkin_ws/lib
-COPY --from=builder ~/tensorflow/bazel-genfiles/ ~/catkin_ws/include/
-COPY --from=builder ~/tensorflow/tensorflow/cc ~/catkin_ws/include/tensorflow
-COPY --from=builder ~/tensorflow/tensorflow/core ~/catkin_ws/include/tensorflow
-COPY --from=builder ~/tensorflow/third_party ~/catkin_ws/include
+COPY --from=builder /root/tensorflow/bazel-genfiles/ ~/catkin_ws/include/
+COPY --from=builder /root/tensorflow/tensorflow/cc ~/catkin_ws/include/tensorflow
+COPY --from=builder /root/tensorflow/tensorflow/core ~/catkin_ws/include/tensorflow
+COPY --from=builder /root/tensorflow/third_party ~/catkin_ws/include
 COPY --from=builder /usr/local/include/google ~/catkin_ws/include
-COPY --from=builder ~/tensorflow/tensorflow/contrib/makefile/downloads/absl/absl ~/catkin_ws/include
+COPY --from=builder /root/tensorflow/tensorflow/contrib/makefile/downloads/absl/absl ~/catkin_ws/include
 
 ARG DEBIAN_FRONTEND=noninteractive
 
