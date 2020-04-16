@@ -31,8 +31,7 @@ FROM nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04
 RUN mkdir -p ~/catkin_ws/lib && \
     mkdir -p ~/catkin_ws/include
 # copy the library and header files to the respective locations
-COPY --from=builder ~/tensorflow/bazel-bin/tensorflow/libtensorflow_cc* ~/catkin_ws/lib
-COPY --from=builder ~/tensorflow/bazel-bin/tensorflow/libtensorflow_framework* ~/catkin_ws/lib
+COPY --from=builder ~/tensorflow/bazel-bin/tensorflow/* ~/catkin_ws/lib
 COPY --from=builder /usr/local/lib/libprotobuf.a ~/catkin_ws/lib
 COPY --from=builder ~/tensorflow/bazel-genfiles/* ~/catkin_ws/include
 COPY --from=builder ~/tensorflow/tensorflow/cc ~/catkin_ws/include/tensorflow
