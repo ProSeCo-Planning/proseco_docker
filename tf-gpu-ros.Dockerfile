@@ -31,14 +31,14 @@ FROM nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04
 RUN mkdir -p ~/catkin_ws/lib && \
     mkdir -p ~/catkin_ws/include
 # copy the library and header files to the respective locations
-COPY --from=builder /root/tensorflow/bazel-bin/tensorflow/ ~/catkin_ws/lib/
-COPY --from=builder /usr/local/lib/libprotobuf.a ~/catkin_ws/lib
-COPY --from=builder /root/tensorflow/bazel-genfiles/ ~/catkin_ws/include/
-COPY --from=builder /root/tensorflow/tensorflow/cc ~/catkin_ws/include/tensorflow
-COPY --from=builder /root/tensorflow/tensorflow/core ~/catkin_ws/include/tensorflow
-COPY --from=builder /root/tensorflow/third_party ~/catkin_ws/include
-COPY --from=builder /usr/local/include/google ~/catkin_ws/include
-COPY --from=builder /root/tensorflow/tensorflow/contrib/makefile/downloads/absl/absl ~/catkin_ws/include
+COPY --from=builder /root/tensorflow/bazel-bin/tensorflow/ /root/catkin_ws/lib/
+COPY --from=builder /usr/local/lib/libprotobuf.a /root/catkin_ws/lib
+COPY --from=builder /root/tensorflow/bazel-genfiles/ /root/catkin_ws/include/
+COPY --from=builder /root/tensorflow/tensorflow/cc /root/catkin_ws/include/tensorflow
+COPY --from=builder /root/tensorflow/tensorflow/core /root/catkin_ws/include/tensorflow
+COPY --from=builder /root/tensorflow/third_party /root/catkin_ws/include
+COPY --from=builder /usr/local/include/google /root/catkin_ws/include
+COPY --from=builder /root/tensorflow/tensorflow/contrib/makefile/downloads/absl/absl /root/catkin_ws/include
 
 ARG DEBIAN_FRONTEND=noninteractive
 
