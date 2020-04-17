@@ -18,13 +18,13 @@ COPY --from=builder /tmp/tensorflow/lib/ /usr/local/lib/tensorflow
 COPY --from=builder /usr/local/lib/libprotobuf.a /usr/local/lib/tensorflow
 # copy includes
 COPY --from=builder /tmp/tensorflow/include/ /usr/local/include/tensorflow
-COPY --from=builder /root/tensorflow/tensorflow/cc /usr/local/include/tensorflow/tensorflow/cc
-COPY --from=builder /root/tensorflow/tensorflow/core /usr/local/include/tensorflow/tensorflow/core
-COPY --from=builder /root/tensorflow/third_party /usr/local/include/tensorflow/third_party
+COPY --from=builder /tensorflow/tensorflow/cc /usr/local/include/tensorflow/tensorflow/cc
+COPY --from=builder /tensorflow/tensorflow/core /usr/local/include/tensorflow/tensorflow/core
+COPY --from=builder /tensorflow/third_party /usr/local/include/tensorflow/third_party
 COPY --from=builder /usr/local/include/google /usr/local/include/tensorflow/google
-COPY --from=builder /root/tensorflow/tensorflow/contrib/makefile/downloads/absl/absl /usr/local/include/tensorflow/absl
-COPY --from=builder /root/tensorflow/bazel-tensorflow/external/eigen_archive/unsupported /usr/local/include/tensorflow
-COPY --from=builder /root/tensorflow/bazel-tensorflow/external/eigen_archive/Eigen /usr/local/include/tensorflow
+COPY --from=builder /tensorflow/tensorflow/contrib/makefile/downloads/absl/absl /usr/local/include/tensorflow/absl
+COPY --from=builder /tensorflow/bazel-tensorflow/external/eigen_archive/unsupported /usr/local/include/tensorflow
+COPY --from=builder /tensorflow/bazel-tensorflow/external/eigen_archive/Eigen /usr/local/include/tensorflow
 
 # BUILD/RUN Dependencies
 RUN apt update && apt install -y \
