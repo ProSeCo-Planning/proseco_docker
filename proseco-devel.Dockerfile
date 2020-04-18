@@ -8,4 +8,4 @@ RUN apt update && apt install -y \
     tmux \
     vim \
     git && \
-    pip3 install -U pip
+    pip3 install -U pip setuptools
