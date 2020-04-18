@@ -4,6 +4,8 @@ FROM karlkurzer/proseco:build
 RUN apt update && apt install -y \
     python3-pip \
     python3-venv \
+    python3-tk \
     tmux \
     vim \
-    git
+    git && \
+    pip3 install -U pip
