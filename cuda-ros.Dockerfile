@@ -28,3 +28,10 @@ RUN rosdep init && \
 RUN apt-get update && apt-get install -y \
     ros-melodic-ros-core=1.4.1-0* \
     && rm -rf /var/lib/apt/lists/*
+
+# set entrypoint
+COPY ros_entrypoint.sh /ros_entrypoint.sh
+RUN chmod a+rx /ros_entrypoint.sh
+
+ENTRYPOINT [ "/ros_entrypoint.sh" ]
+CMD ["bash"]
