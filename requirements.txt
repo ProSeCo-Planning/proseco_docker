@@ -1,0 +1,17 @@
+cycler==0.10.0
+kiwisolver==1.1.0
+matplotlib==2.2.2
+numpy==1.17.4
+pandas>=0.24.2
+pyparsing==2.4.5
+python-dateutil==2.8.1
+pytz==2019.3
+PyYAML==5.1
+six==1.13.0
+bayesian-optimization==1.0.0
+gpyopt==1.2.5
+rospkg==1.2.0
+scikit-image==0.16.2
+tkfilebrowser==2.3.2
+tensorflow==2.1.0
+tensorflow_probability==0.9.0
