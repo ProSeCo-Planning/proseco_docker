@@ -28,4 +28,5 @@ COPY --from=builder /tensorflow/bazel-tensorflow/external/eigen_archive/Eigen /u
 
 # BUILD/RUN Dependencies
 RUN apt update && apt install -y \
-    libeigen3-dev
+    libeigen3-dev \
+    && rm -rf /var/lib/apt/lists/*
