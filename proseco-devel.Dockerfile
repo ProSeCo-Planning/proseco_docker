@@ -12,6 +12,7 @@ RUN apt update && apt install -y \
     python3-tk \
     # C++
     gdb \
+    clang-format \
     # CLEAN UP
     && rm -rf /var/lib/apt/lists/*
     
