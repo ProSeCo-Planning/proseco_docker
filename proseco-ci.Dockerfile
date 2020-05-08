@@ -6,13 +6,13 @@ RUN apt update && apt install -y \
     clang-tidy \
     clang-format \
     cppcheck \
-    python-catkin-lint
+    python-catkin-lint \
     # CLEAN UP
     && rm -rf /var/lib/apt/lists/*
 
 # CI TEST Dependencies
 RUN apt update && apt install -y \
-    python3-pip
+    python3-pip \
     # CLEAN UP
     && rm -rf /var/lib/apt/lists/*
 
@@ -21,6 +21,6 @@ RUN pip3 install --upgrade pip && \
     PyYAML \
     rospkg \
     defusedxml \
-    netifaces
+    netifaces \
     # CLEAN UP
     && rm -rf ~/.cache/pip
