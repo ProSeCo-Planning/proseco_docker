@@ -6,6 +6,7 @@ RUN apt update && apt install -y \
     tmux \
     vim \
     git \
+    tmux \
     ssh-client \
     # PYTHON
     python3-pip \
