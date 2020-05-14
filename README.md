@@ -7,3 +7,4 @@
 ## RUN Depedencies
 * `proseco-ci.Dockerfile | ci` - installs depedencies for CI
 * `proseco-devel.Dockerfile | devel` - installs depedencies for development
+* `proseco-ray.Dockerfile | ray` - installs depedencies for parallel evaluation/simulation
