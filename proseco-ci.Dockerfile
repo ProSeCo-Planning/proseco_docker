@@ -22,5 +22,10 @@ RUN pip3 install --upgrade pip && \
     rospkg \
     defusedxml \
     netifaces \
+    ray \
+    numpy \
+    pandas \
+    tqdm \
+    black \
     # CLEAN UP
     && rm -rf ~/.cache/pip
