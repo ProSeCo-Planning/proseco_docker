@@ -14,5 +14,5 @@ tqdm==4.48.2
 rospkg==1.2.0
 scikit-image==0.16.2
 tkfilebrowser==2.3.2
-tensorflow==2.1.0
+tensorflow==2.1.2
 tensorflow_probability==0.9.0
