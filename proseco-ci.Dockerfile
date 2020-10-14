@@ -16,7 +16,7 @@ RUN apt update && apt install -y \
     # CLEAN UP
     && rm -rf /var/lib/apt/lists/*
     
-RUN pip3 install --upgrade pip
+RUN pip3 install --upgrade pip setuptools
     
 COPY requirements.txt /requirements.txt
 
