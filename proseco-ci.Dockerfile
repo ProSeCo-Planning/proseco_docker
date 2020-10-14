@@ -4,7 +4,7 @@ FROM karlkurzer/proseco:build
 RUN apt update && apt install -y \
     clang \
     clang-tidy \
-    clang-format \
+    clang-format-10 \
     cppcheck \
     python-catkin-lint \
     # CLEAN UP
