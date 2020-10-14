@@ -15,17 +15,11 @@ RUN apt update && apt install -y \
     python3-pip \
     # CLEAN UP
     && rm -rf /var/lib/apt/lists/*
+    
+RUN pip3 install --upgrade pip
+    
+COPY requirements.txt /requirements.txt
 
-RUN pip3 install --upgrade pip && \
-    pip3 install \
-    PyYAML \
-    rospkg \
-    defusedxml \
-    netifaces \
-    ray \
-    numpy \
-    pandas \
-    tqdm \
-    black \
+RUN pip3 install -r /requirements.txt \
     # CLEAN UP
     && rm -rf ~/.cache/pip
