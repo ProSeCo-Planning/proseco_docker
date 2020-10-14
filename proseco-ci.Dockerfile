@@ -2,8 +2,8 @@ FROM karlkurzer/proseco:build
 
 # CI CHECK Dependencies
 RUN apt update && apt install -y \
-    clang \
-    clang-tidy \
+    clang-10 \
+    clang-tidy-10 \
     clang-format-10 \
     cppcheck \
     python-catkin-lint \
