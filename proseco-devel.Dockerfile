@@ -1,9 +1,11 @@
-FROM karlkurzer/proseco:build
+FROM karlkurzer/proseco:cuda-ros
 
 # DEV Dependencies
 RUN apt update && apt install -y \
     # TOOLS
     tmux \
+    wget \
+    zip \
     vim \
     git \
     htop \

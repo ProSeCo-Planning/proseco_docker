@@ -1,12 +1,13 @@
-FROM karlkurzer/proseco:build
+FROM karlkurzer/proseco:cuda-ros
 
 # CI CHECK Dependencies
 RUN apt update && apt install -y \
+    git \
     clang-10 \
     clang-tidy-10 \
     clang-format-10 \
     cppcheck \
-    python-catkin-lint \
+    python3-catkin-lint \
     # CLEAN UP
     && rm -rf /var/lib/apt/lists/*
 

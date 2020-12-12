@@ -1,4 +1,4 @@
-FROM karlkurzer/proseco:build
+FROM karlkurzer/proseco:cuda-ros
 
 # RUN Dependencies
 RUN apt update && apt install -y \
