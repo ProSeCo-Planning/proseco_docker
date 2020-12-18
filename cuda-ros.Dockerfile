@@ -24,10 +24,9 @@ ENV ROS_DISTRO noetic
 RUN rosdep init && \
   rosdep update --rosdistro $ROS_DISTRO
 
-# install ros packages & Eigen
+# install ros packages
 RUN apt-get update && apt-get install -y \
     ros-noetic-ros-core=1.5.0-1* \
-    libeigen3-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # set entrypoint

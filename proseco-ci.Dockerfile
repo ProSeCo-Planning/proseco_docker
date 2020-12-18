@@ -1,10 +1,8 @@
-FROM karlkurzer/proseco:cuda-ros
+FROM karlkurzer/proseco:build
 
 # CI CHECK Dependencies
 RUN apt update && apt install -y \
     git \
-    wget \
-    zip \
     clang-10 \
     clang-tidy-10 \
     clang-format-10 \
