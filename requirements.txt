@@ -10,3 +10,5 @@ black==20.8b1
 sphinx==3.4.3
 recommonmark==0.7.1
 tqdm==4.56.0
+scipy==1.6.0
+shapely==1.7.1
