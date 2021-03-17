@@ -4,6 +4,8 @@ FROM karlkurzer/proseco:cuda-ros
 RUN apt update && apt install -y \
     wget \
     zip \
+    gcc-10 \
+    g++-10 \
     libeigen3-dev \
     # CLEAN UP
     && rm -rf /var/lib/apt/lists/* 
