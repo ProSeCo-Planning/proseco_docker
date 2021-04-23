@@ -11,4 +11,5 @@ RUN apt update && apt install -y \
     && rm -rf /var/lib/apt/lists/* 
 
 COPY install_torchlib.sh /install_torchlib.sh
-RUN chmod a+rx /ros_entrypoint.sh && bash install_torchlib.sh
+COPY install_swig.sh /install_swig.sh
+RUN chmod a+rx /ros_entrypoint.sh && bash install_torchlib.sh && bash install_swig.sh
