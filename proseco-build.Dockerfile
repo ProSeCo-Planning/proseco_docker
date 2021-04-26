@@ -8,6 +8,7 @@ RUN apt update && apt install -y \
     g++-10 \
     libeigen3-dev \
     swig3.0 \
+    libcairo2-dev \
     # CLEAN UP
     && rm -rf /var/lib/apt/lists/* 
 
