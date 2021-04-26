@@ -17,7 +17,7 @@ RUN apt update && apt install -y \
     # CLEAN UP
     && rm -rf /var/lib/apt/lists/*
     
-RUN pip3 install --upgrade pip setuptools
+RUN pip3 install --upgrade pip setuptools wheel numpy~=1.19.2
     
 COPY requirements.txt /requirements.txt
 
