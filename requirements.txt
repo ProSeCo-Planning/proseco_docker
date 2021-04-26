@@ -1,5 +1,5 @@
 # general
-numpy>=1.20  # 1.20 required for numpy.typing.ArrayLike
+numpy~=1.19.2
 scipy~=1.6.2
 pandas~=1.2.4
 black==20.8b1
