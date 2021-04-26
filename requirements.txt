@@ -18,7 +18,7 @@ cave~=1.4.1
 emcee~=3.0.2
 smac~=0.13.1
 seaborn~=0.11.0
-#oapackage~=2.6.8
+oapackage~=2.6.8
 scikit-optimize~=0.8.1
 
 # inverse reinforcement learning
