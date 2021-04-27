@@ -20,6 +20,7 @@ smac~=0.13.1
 seaborn~=0.11.0
 oapackage~=2.6.8
 scikit-optimize~=0.8.1
+wandb~=0.10.27
 
 # inverse reinforcement learning
 tensorflow~=2.4.1
