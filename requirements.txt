@@ -32,3 +32,6 @@ matplotlib~=3.4.1
 # documentation generation
 sphinx~=3.5.4
 recommonmark~=0.7.1
+
+# debug
+ipdb~=0.13.9 
