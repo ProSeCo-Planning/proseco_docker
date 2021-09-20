@@ -8,5 +8,4 @@
 
 ## Building
 1. `git clone https://github.com/ProSeCo-Planning/proseco_docker.git && cd proseco_docker`
-1. `sudo docker build -f <file_name> -t karlkurzer/proseco:<tag_name> .`
-1. `sudo docker push karlkurzer/proseco:<tag_name>`
+2. `./docker_build.sh` to build and push all tags or `sudo docker build -f <file_name> -t karlkurzer/proseco:<tag_name> .` and `sudo docker push karlkurzer/proseco:<tag_name>`
