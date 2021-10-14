@@ -15,3 +15,4 @@ RUN apt update && apt install -y \
 COPY install_torchlib.sh /install_torchlib.sh
 COPY install_cue.sh /install_cue.sh
 RUN chmod a+rx /ros_entrypoint.sh && bash install_torchlib.sh && bash install_cue.sh
+ENV PATH="/root/.local/bin:$PATH" 
