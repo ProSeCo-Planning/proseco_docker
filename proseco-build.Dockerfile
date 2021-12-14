@@ -2,6 +2,8 @@ FROM karlkurzer/proseco:cuda-ros
 
 # BUILD/RUN Dependencies
 RUN apt update && apt install -y \
+    apt-transport-https \
+    ca-certificates \
     wget \
     zip \
     gcc-10 \
@@ -10,7 +12,9 @@ RUN apt update && apt install -y \
     swig \
     libcairo2-dev \
     # CLEAN UP
-    && rm -rf /var/lib/apt/lists/* 
+    && rm -rf /var/lib/apt/lists/*
+
+RUN update-ca-certificates
 
 COPY install_torchlib.sh /install_torchlib.sh
 COPY install_cue.sh /install_cue.sh
